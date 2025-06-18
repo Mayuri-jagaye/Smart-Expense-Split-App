@@ -1,0 +1,148 @@
+{
+  "info": {
+    "_postman_id": "b1e1e1e1-1111-2222-3333-444455556666",
+    "name": "Smart Expense Splitter API",
+    "description": "Postman collection for testing the Smart Expense Splitter Flask API.",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "Initialize DB",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/init",
+          "host": ["{{base_url}}"],
+          "path": ["api", "init"]
+        }
+      }
+    },
+    {
+      "name": "Get People",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/people",
+          "host": ["{{base_url}}"],
+          "path": ["api", "people"]
+        }
+      }
+    },
+    {
+      "name": "Add Expense",
+      "request": {
+        "method": "POST",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 300,\n  \"description\": \"Dinner at restaurant\",\n  \"paid_by\": \"Shantanu\",\n  \"category\": \"Food & Dining\",\n  \"split_type\": \"equal\",\n  \"split_between\": [\"Shantanu\", \"Sanket\", \"Om\"]\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/expenses",
+          "host": ["{{base_url}}"],
+          "path": ["api", "expenses"]
+        }
+      }
+    },
+    {
+      "name": "Get Expenses",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/expenses",
+          "host": ["{{base_url}}"],
+          "path": ["api", "expenses"]
+        }
+      }
+    },
+    {
+      "name": "Update Expense",
+      "request": {
+        "method": "PUT",
+        "header": [
+          {"key": "Content-Type", "value": "application/json"}
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"amount\": 350,\n  \"description\": \"Updated dinner expense\"\n}"
+        },
+        "url": {
+          "raw": "{{base_url}}/api/expenses/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "expenses", "1"]
+        }
+      }
+    },
+    {
+      "name": "Delete Expense",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/expenses/1",
+          "host": ["{{base_url}}"],
+          "path": ["api", "expenses", "1"]
+        }
+      }
+    },
+    {
+      "name": "Get Balances",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/balances",
+          "host": ["{{base_url}}"],
+          "path": ["api", "balances"]
+        }
+      }
+    },
+    {
+      "name": "Get Settlements",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/settlements",
+          "host": ["{{base_url}}"],
+          "path": ["api", "settlements"]
+        }
+      }
+    },
+    {
+      "name": "Category Analytics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/analytics/categories",
+          "host": ["{{base_url}}"],
+          "path": ["api", "analytics", "categories"]
+        }
+      }
+    },
+    {
+      "name": "Monthly Analytics",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{base_url}}/api/analytics/monthly",
+          "host": ["{{base_url}}"],
+          "path": ["api", "analytics", "monthly"]
+        }
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "base_url",
+      "value": "https://smart-expense-split-app.onrender.com"
+    }
+  ]
+} 
