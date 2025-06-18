@@ -134,4 +134,6 @@ Developed as part of an important assignment to demonstrate:
 
 ## 📬 Contact
 
-For questions or feedback, please contact the project author. 
+For questions or feedback, please contact:
+Email - mjagaye95@gmail.com
+Linkedin - [Mayuri Jagaye](www.linkedin.com/in/mayuri-jagaye-866990268)
